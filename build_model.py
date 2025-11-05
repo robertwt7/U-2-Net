@@ -13,7 +13,7 @@ print("Loading pre-trained weights (u2netp.pth)...")
 # We use map_location='cpu' to ensure it runs even without a GPU
 model.load_state_dict(
     torch.load(
-        "saved_models/u2net_portrait/u2net_portrait.pth",
+        "saved_models/u2netlite/u2net_lite.pth",
         map_location=torch.device("mps"),
     )
 )
