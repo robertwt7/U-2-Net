@@ -4,7 +4,7 @@ from model.u2net_refactor import (
     U2NET_lite,
 )  # Import the model definition from your file
 
-print("Loading U-2-Net Lite model architecture...")
+print("Loading U-2-Net Full model architecture...")
 # Create an instance of the model
 model = U2NET_lite()
 
@@ -12,7 +12,10 @@ print("Loading pre-trained weights (u2netp.pth)...")
 # Load the weights from the .pth file
 # We use map_location='cpu' to ensure it runs even without a GPU
 model.load_state_dict(
-    torch.load("saved_models/u2net/u2net.pth", map_location=torch.device("cpu"))
+    torch.load(
+        "saved_models/u2net_portrait/u2net_portrait.pth",
+        map_location=torch.device("mps"),
+    )
 )
 
 # Set the model to evaluation mode (important for conversion)
